@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task - From static HTML to a Vue Instance</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="header__section">
+        <p class="header__task-name">💻 Coding Task</p>
+        <p class="header__bootcamp-info-wrapper">
+          <span class="header__bootcamp-modul"
+            ><strong>Modul:</strong> Web Apps with Vue.js - Part 1</span
+          >
+          <a
+            href="https://www.coding-bootcamps.eu/"
+            class="header__bootcamp-link"
+            >coding-bootcamps.eu</a
+          >
+        </p>
+      </section>
+    </header>
+    <main>
+      <div class="inside">
+        <div class="card" id="app">
+          <h2>Welcome back <strong>{{ userName }}</strong>!</h2>
+          <p>
+            You logged in on {{ date.toLocaleString(de-DE) }}<br />
+            We wish you a pleasant day.
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          const currentDate = new Date();
+
+          return {
+            userName: "John Doe",
+            date: currentDate,
+          };
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
