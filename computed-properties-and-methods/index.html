@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task - Attribute Binding</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <section class="header__section">
+        <p class="header__task-name">💻 Coding Task</p>
+        <p class="header__bootcamp-info-wrapper">
+          <span class="header__bootcamp-modul"
+            ><strong>Modul:</strong> Web Apps with Vue.js - Part 1</span
+          >
+          <a
+            href="https://www.coding-bootcamps.eu/"
+            class="header__bootcamp-link"
+            >coding-bootcamps.eu</a
+          >
+        </p>
+      </section>
+    </header>
+    <main>
+      <div id="app" class="inside">
+        <h1>20% off on all books from O'Reilly Media</h1>
+        <table>
+          <thead>
+            <tr>
+              <th v-for="columnName in columnHead" :key="columnName">
+                {{ columnName }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="{ title, isbn, author, publisher, price, numPages } of onlyBooksFromOreilly"
+              :key="isbn"
+            >
+              <td>{{ title }}</td>
+              <td>{{ isbn }}</td>
+              <td>{{ author }}</td>
+              <td>{{ publisher }}</td>
+              <td>
+                <span class="strike">{{ price }}</span> {{ discountPrice(price,
+                20)}}
+              </td>
+              <td>{{ numPages }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>
