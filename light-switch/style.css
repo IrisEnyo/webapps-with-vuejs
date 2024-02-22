@@ -1,0 +1,51 @@
+/* ========== General Styling ========== */
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+/* ========== Spezial Styling ========== */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body {
+  background-color: snow;
+  transition: 2s ease-in-out background-color;
+}
+
+.button {
+  border: 0.5rem solid black;
+  border-radius: 0.2rem;
+  font-family: monospace;
+  font-size: 1.5rem;
+  background-color: snow;
+  color: black;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+.button--night {
+  border: 0.2rem solid snow;
+  background-color: black;
+  color: snow;
+  box-shadow: 0 0 0.5rem yellow, 0 0 1rem yellow, 0 0 2rem yellow;
+}
+
+.body--night {
+  background-color: black;
+}
