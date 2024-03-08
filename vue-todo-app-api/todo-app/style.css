@@ -1,0 +1,59 @@
+/* ========== general styling ========== */
+
+*,
+::after,
+::before,
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* ========== spezific styling ========== */
+
+header,
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 1.5rem;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.remove-button,
+.input-submit {
+  font-size: 0.9rem;
+}
+
+input[type="checkbox"] {
+  margin-left: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  transition: background-color 1s ease-in-out, transform 1s;
+}
+
+.todoItemDone {
+  text-decoration: line-through;
+  border: 0.1rem solid salmon;
+  background-color: salmon;
+  box-shadow: 0.2rem 0.2rem;
+  transition: background-color 1s ease-in-out, transform 1s;
+  transform: translate(5rem);
+}
