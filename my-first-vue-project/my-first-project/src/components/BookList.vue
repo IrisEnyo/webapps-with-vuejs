@@ -6,7 +6,7 @@
         <tr>
           <th class="table-item__table-head-name">Name</th>
           <th class="table-item__table-head--isbn">ISBN</th>
-          <th class="table-item__table-head--actions">Action</th>
+          <th class="table-item__table-head--actions"></th>
         </tr>
       </thead>
       <tbody>
@@ -16,6 +16,8 @@
           :title="book.title"
           :isbn="book.isbn"
           class="table-item__table-row"
+          :isBookmarked="book?.isBookmarked"
+          @bookmark-clicked="handleBookmarkClick"
         />
       </tbody>
     </table>
@@ -65,6 +67,16 @@ export default {
     };
   },
   components: { BookListRow },
+
+  methods: {
+    handleBookmarkClick(isbn) {
+      const currentBookIndex = this.books.findIndex(
+        (book) => book.isbn === isbn
+      );
+      const currentBook = this.books[currentBookIndex];
+      currentBook.isBookmarked = !currentBook.isBookmarked ? true : false;
+    },
+  },
 };
 </script>
 
